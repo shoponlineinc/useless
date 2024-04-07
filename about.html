@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .shape {
+      position: absolute;
+      top: 90px;
+      left: 30px;
+      border-top: 8px solid #3498db;
+      border-left: 8px solid #3498db;
+      width: 20px;
+      height: 20px;
+      z-index: 2;
+    }
+
+    .container {
+      position: relative;
+      padding: 50px;
+      margin-top: 40px;
+      column-count: 2; /* Set the number of columns */
+      column-gap: 40px; /* Adjust the gap between columns */
+    }
+
+    .info {
+      margin-bottom: 20px;
+    }
+
+    .end-shape {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      border-bottom: 8px solid #3498db;
+      border-right: 8px solid #3498db;
+      width: 20px;
+      height: 20px;
+      z-index: 2;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 20px;
+      position: relative;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 3px 2px #00ff00;
+      padding: 20px;
+      border-radius: 10px;
+
+    }
+
+
+
+li:hover{
+transform:scale(1.2);
+    }
+
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      box-shadow: 0 0 10px 5px #00ff00;
+      padding: 20px;
+      background-color: transparent;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      transition: box-shadow 0.5s ease;
+    }
+
+    header a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      margin-right: 20px;
+      font-weight: bold;
+      font-size: 19px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    header a:hover {
+      color: red;
+      transform: scale(1.2);
+    }
+
+    .circle-container {
+      width: 50%;
+      position: fixed; /* Change to fixed */
+      top: 200px; /* Center vertically */
+      left: 95%; /* Center horizontally */
+      transform: translate(-50%, -50%);
+    }
+
+    .circle {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 50px 20px #00ff00;
+      position: absolute;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .circle:hover {
+      transform: scale(1.2);
+    }
+
+    .circle:hover::after {
+      background-color: #ff0000;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="shape"></div>
+    <ul class="container">
+      <li id="in"><strong>Name:</strong> Yasin Joma</li>
+      <li id="in1"><strong>Age:</strong> 15</li>
+      <li id="in2"><strong>Occupation:</strong> Front-end Web Developer<br> & Graphics Designer</li>
+      <li id="in3"><strong>Experience:</strong> 3 years</li>
+      <li id="in4"><strong>Languages:</strong> Arabic, English</li>
+      <li id="in5"><strong>Programming Languages:</strong> Html, css, JS</li>
+      <li id="in6"><strong>Attention to Detail</strong></li>
+      <li id="in7"><strong>Communication Skills</strong></li>
+      <li id="in8"><strong>Adaptability</strong></li>
+      <li id="in9"><strong>Creativity</strong></li>
+      <li id="in10"><strong>Continuous Learning</strong></li>
+      <li id="in11"><strong>User Experience (UX)</strong></li>
+      <!-- Add more details as needed -->
+    </ul>
+
+  <header id="colorchange">
+    <a href="portfolio.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="works.html">Previous Projects</a>
+  </header>
+
+  <section>
+    <div class="circle-container">
+      <div class="circle" id="color-changing-circle">
+        <img src="mypic.jpg" alt="Profile Picture" class="profile-pic">
+      </div>
+    </div>
+  </section>
+
+    <div class="end-shape"></div>
+  </div>
+
+
+  <script>
+
+    const colorChangingCircle = document.getElementById('color-changing-circle');
+    const colorchange = document.getElementById('colorchange');
+    const colorchangeinfo = document.getElementById('in');
+    const colorchangeinfo1 = document.getElementById('in1');
+    const colorchangeinfo2 = document.getElementById('in2');
+    const colorchangeinfo3 = document.getElementById('in3');
+    const colorchangeinfo4 = document.getElementById('in4');
+    const colorchangeinfo5 = document.getElementById('in5');
+    const colorchangeinfo6 = document.getElementById('in6');
+    const colorchangeinfo7 = document.getElementById('in7');
+    const colorchangeinfo8 = document.getElementById('in8');
+    const colorchangeinfo9 = document.getElementById('in9');
+    const colorchangeinfo10 = document.getElementById('in10');
+    const colorchangeinfo11 = document.getElementById('in11');
+
+
+    let currentColorIndex = 0;
+    const colors = ['#00ff00', '#0000ff', '#ff0000', '#00ffff', '#ffff00'];
+
+    setInterval(() => {
+      colorChangingCircle.style.boxShadow = `0 0 10px 5px ${colors[currentColorIndex]}`;
+      colorchange.style.boxShadow = `0 0 10px 5px ${colors[currentColorIndex]}`;
+colorchangeinfo.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo1.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo2.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo3.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo4.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo5.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo6.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo7.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo8.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo9.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo10.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+colorchangeinfo11.style.boxShadow = `0 0 3px 2px ${colors[currentColorIndex]}`;
+
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }, 700); // Change color every 3 seconds
+  </script>
+
+</body>
+</html>
